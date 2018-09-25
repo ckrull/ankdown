@@ -315,7 +315,9 @@ def cards_to_apkg(cards, output_name):
     for card in cards:
         card.finalize()
         for media_reference in card.media_references():
-            media.add(media_reference)
+            if media_reference
+            relative_reference = media_reference.split('/')[-1]
+            media.add(relative_reference)
         deck_index = len(decks[card.deckname].notes)
         decks[card.deckname].add_note(card.to_genanki_note(deck_index=deck_index))
 
